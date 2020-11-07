@@ -84,8 +84,10 @@ public class DatabaseManager {
             return;
         }
         try {
-            if (!connection.isClosed())
+            if (!connection.isClosed()) {
                 connection.close();
+                System.out.println("The connection was closed");
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
